@@ -1,6 +1,6 @@
 public class Solution {
-    List<int> res=new();
     public int[] CountBits(int n) {
+        List<int> res=new();
         for(int i=0; i<=n; i++) {
             res.Add(Remainder(i));
         }
