@@ -15,9 +15,4 @@ public class Solution {
         }
         return new string(vowels);
     }
-
-    public bool IsVowel(char c)
-    {
-        return (c is 'a' or 'A' or 'e' or 'E' or 'i' or 'I' or 'o' or 'O' or 'u' or 'U');
-    }
 }
