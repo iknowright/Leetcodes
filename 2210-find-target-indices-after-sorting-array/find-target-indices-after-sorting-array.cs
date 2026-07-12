@@ -4,6 +4,7 @@ public class Solution {
         List<int> res=new();
         for(int i=0; i<nums.Length; i++) {
             if(nums[i]==target) res.Add(i);
+            if(nums[i]>target) return res;
         }
         return res;
     }
