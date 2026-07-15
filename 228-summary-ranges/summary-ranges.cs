@@ -3,26 +3,13 @@ public class Solution {
         List<string> res=new();
         if(nums.Length==0) return res;
 
-        
-        int prev=nums[0], distance=1;
-        for(int i=1; i<nums.Length; i++) {
-            if(prev+distance==nums[i]) {
-                distance++;
-            }
-            else {
-                if(distance==1) {
-                    res.Add(prev.ToString());
-                    prev=nums[i];
-                }
-                else {
-                    res.Add($"{prev}->{prev+distance-1}");
-                    prev=nums[i];
-                    distance=1;
-                }
-            }
+        for(int i=0; i<nums.Length; i++) {
+            int start=nums[i];
+            while(i<nums.Length-1 && (nums[i]+1==nums[i+1])) i++;
+
+            if(start==nums[i]) res.Add(start.ToString());
+            else res.Add($"{start}->{nums[i]}");
         }
-        if(distance>1) res.Add($"{prev}->{prev+distance-1}");
-        else res.Add(prev.ToString());
         return res;
     }
 }
