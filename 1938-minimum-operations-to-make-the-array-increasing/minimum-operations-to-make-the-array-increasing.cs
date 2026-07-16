@@ -8,7 +8,6 @@ public class Solution {
             else {
                 max++;
                 count+=max-nums[i];
-                nums[i]=max;
             }
         }
         return count;
