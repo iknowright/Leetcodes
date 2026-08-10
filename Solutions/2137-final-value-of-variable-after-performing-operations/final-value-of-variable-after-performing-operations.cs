@@ -1,8 +1,8 @@
 public class Solution {
-    public int FinalValueAfterOperations(string[] operations) {
+    public static int FinalValueAfterOperations(string[] operations) {
         int num=0;
         foreach(string operation in operations) {
-            if(operation[1]=='+') num++;
+            if(operation[1] is '+') num++;
             else num--;
         }
         return num;
