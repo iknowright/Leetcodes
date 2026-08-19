@@ -7,17 +7,17 @@ public class Solution {
             if(!dict.ContainsKey(row)) dict[row] = new List<int>();
             dict[row].Add(seat[1]);
         }
-        long res = (long)(n - dict.Count)*2;
-        List<int> reserved;
+        long count = (long)(n - dict.Count)*2;
+        List<int> res;
         foreach(var kvp in dict) {
-            reserved = kvp.Value;
-            bool left = !reserved.Contains(2) && !reserved.Contains(3) && !reserved.Contains(4) && !reserved.Contains(5);
-            bool right = !reserved.Contains(6) && !reserved.Contains(7) && !reserved.Contains(8) && !reserved.Contains(9);
-            bool middle = !reserved.Contains(4) && !reserved.Contains(5) && !reserved.Contains(6) && !reserved.Contains(7);
+            res = kvp.Value;
+            bool left = !res.Contains(2) && !res.Contains(3) && !res.Contains(4) && !res.Contains(5);
+            bool right = !res.Contains(6) && !res.Contains(7) && !res.Contains(8) && !res.Contains(9);
+            bool middle = !res.Contains(4) && !res.Contains(5) && !res.Contains(6) && !res.Contains(7);
 
-            if (left && right) res+=2;
-            else if(left || right || middle) res+=1;
+            if (left && right) count+=2;
+            else if(left || right || middle) count+=1;
         }
-        return (int)res;
+        return (int)count;
     }
 }
