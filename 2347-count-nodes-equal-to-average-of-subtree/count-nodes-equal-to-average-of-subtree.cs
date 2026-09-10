@@ -12,18 +12,18 @@
  * }
  */
 public class Solution {
-    public int res = 0;
+    int res=0, curr, count;
     public int AverageOfSubtree(TreeNode root) {
         PostOrder(root);
         return res;
     }
     public (int sum, int count) PostOrder(TreeNode node) {
         if(node is null) return (0, 0);
-        var left=PostOrder(node.left);
-        var right=PostOrder(node.right);
-        int curr = left.sum+right.sum+node.val, count = left.count+right.count+1;
-
-        if(node.val == curr/count) res++;
+        var left = PostOrder(node.left);
+        var right = PostOrder(node.right);
+        curr = left.sum + right.sum + node.val;
+        count = left.count + right.count + 1;
+        if(curr/count == node.val) res++;
         return (curr, count);
-    }
+    } 
 }
