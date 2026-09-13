@@ -4,8 +4,7 @@ public class Solution {
         foreach(string s in strs) {
             if(int.TryParse(s, out int val)) {
                 max = Math.Max(max, val);
-            }
-            else max = Math.Max(max, s.Length);
+            } else max = Math.Max(max, s.Length);
         }
         return max;
     }
